@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Elba Ramalho</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ===================================================== -->
+    <!-- TELA 1: TELA INICIAL                                   -->
+    <!-- Fica visível por padrão. As outras telas começam       -->
+    <!-- escondidas com a classe "hidden".                      -->
+    <!-- ===================================================== -->
+    <section id="tela-inicial" class="tela">
+      <h1>Quiz Elba Ramalho</h1>
+      <p class="descricao">
+        Teste seus conhecimentos sobre a trajetória, carreira e influência
+        cultural de Elba Ramalho.
+      </p>
+
+      <div class="campo">
+        <label for="nickname">Digite seu nickname</label>
+        <input
+          type="text"
+          id="nickname"
+          placeholder="Ex: Ferreira"
+          maxlength="20"
+        />
+        <!-- Aqui vamos mostrar uma mensagem de erro caso o nickname esteja vazio -->
+        <p id="erro-nickname" class="erro hidden">
+          Digite um nickname antes de começar.
+        </p>
+      </div>
+
+      <button id="btn-comecar" class="btn btn-principal">Começar Quiz</button>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- TELA 2: TELA DO QUIZ                                   -->
+    <!-- ===================================================== -->
+    <section id="tela-quiz" class="tela hidden">
+
+      <!-- Barra de progresso -->
+      <div class="progresso-container">
+        <div class="progresso-texto">
+          <span id="numero-pergunta">Pergunta 1 de 25</span>
+          <span id="pontuacao-atual">Pontos: 0</span>
+        </div>
+        <div class="barra-fundo">
+          <div id="barra-preenchida" class="barra-preenchida"></div>
+        </div>
+      </div>
+
+      <h2 id="texto-pergunta">Texto da pergunta aqui</h2>
+
+      <!-- As 4 alternativas serão inseridas aqui via JavaScript -->
+      <div id="lista-alternativas" class="alternativas"></div>
+
+      <button id="btn-proxima" class="btn btn-principal" disabled>
+        Próxima Pergunta
+      </button>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- TELA 3: TELA DE RESULTADO                              -->
+    <!-- ===================================================== -->
+    <section id="tela-resultado" class="tela hidden">
+      <h2>Quiz concluído!</h2>
+      <p id="resultado-nickname"></p>
+      <p id="resultado-pontuacao"></p>
+      <p id="resultado-porcentagem"></p>
+      <p id="resultado-mensagem" class="mensagem-final"></p>
+
+      <div class="botoes-resultado">
+        <button id="btn-ver-ranking" class="btn btn-principal">
+          Ver Ranking
+        </button>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- TELA 4: TELA DE RANKING                                -->
+    <!-- ===================================================== -->
+    <section id="tela-ranking" class="tela hidden">
+      <h2>Ranking</h2>
+      <ol id="lista-ranking" class="ranking-lista"></ol>
+
+      <div class="botoes-resultado">
+        <button id="btn-jogar-novamente" class="btn btn-principal">
+          Jogar Novamente
+        </button>
+        <button id="btn-voltar-inicio" class="btn btn-secundario">
+          Voltar ao Início
+        </button>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
